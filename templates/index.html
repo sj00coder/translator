@@ -1,0 +1,45 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="{{url_for ('static',filename='css/index.css')}}">
+        
+        <title>My translator</title>
+
+
+    </head>
+    <div class="wrapper">
+        
+        <div class="container">
+            <h1>Hello</h1>
+            <h2>Welcome to the translator</h2>
+            <br>
+            <P class="Welcome-text">Just enter the text and the language to be converted and see the magic</P>
+            <form class="form" id ="myform" method="POST" role="form" action="/">
+                
+                <input type="text" name ="trans" placeholder="Enter the text to be converted">
+                <input type="text" name= "language23" placeholder="language">
+                
+                <button type="submit" id="login-button">Translates</button>
+            </form>
+            <h1>translated:</h1>
+            <h2>{{ translation }} </h2>
+                <!-- <audio controls style="z-index: 100;">
+                   <source  src="{{url_for ('static',filename='media/t-rex-roar.mp3')}}" type="audio/mpeg">
+                        
+                </audio> -->
+            
+            </div>
+        
+	<ul class="bg-bubbles">
+        <li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+	</ul>
+</div>
+</html>
