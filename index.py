@@ -8,15 +8,18 @@ app = Flask(__name__)
 @app.route('/',methods = ['POST','GET'])
 def index():
     if request.method == 'POST':
-        
-        if request.form["language23"] == "Hindi":
+        language = request.form["language23"].title()
+        if language not in lang:
+            return render_template('index.html',translation="SORRY WE CAN'T TRANSLATE IN THIS LANGUAGE TRY ANOTHER ")
+            
+        elif language == "Hindi":
             
             translation = EngtoHindi(request.form["trans"]).convert
             return render_template('index.html',translation=translation)
         
         else:
 
-            langto = lang[request.form["language23"]]
+            langto = lang[language]
             translator = Translator(to_lang=langto)
             translation= translator.translate(request.form["trans"])
         
