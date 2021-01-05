@@ -18,6 +18,7 @@
   }
   body {
     font-family: 'Source Sans Pro', sans-serif;
+    overflow-y: scroll;
     color: white;
     font-weight: 300;
   }
@@ -230,4 +231,20 @@
   }
   .welcome-text{
     font-size: 20;
+  }
+  .downloadbtn{
+    position: relative;
+    z-index:1000;
+  }
+  
+  .myfile::-webkit-file-upload-button{
+    visibility: hidden;
+    
+  }
+  .myfile{
+    font: normal normal normal 20px FontAwesome;
+
+  }
+  .myfile::before {
+    content: "\f093";
   }

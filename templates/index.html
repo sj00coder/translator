@@ -1,7 +1,7 @@
 <html>
     <head>
         <link rel="stylesheet" href="{{url_for ('static',filename='css/index.css')}}">
-        
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <title>My translator</title>
 
 
@@ -13,22 +13,24 @@
             <h2>Welcome to the translator</h2>
             <br>
             <P class="Welcome-text">Just enter the text and the language to be converted and see the magic</P>
-            <form class="form" id ="myform" method="POST" role="form" action="/">
+            <form class="form" id ="myform" method="POST" role="form" action="/" enctype="multipart/form-data">
                 
                 <input type="text" name ="trans" placeholder="Enter the text to be converted">
+                    <h3>or</h3>
+                    <br>
+                    
+                <input type="file" name="file" id= "myfile" class="myfile">
                 <input type="text" name= "language23" placeholder="language">
                 
-                <button type="submit" id="login-button">Translates</button>
+                <button type="submit" id="login-button" value="submit">Translates</button>
             </form>
             <h1>translated:</h1>
+            <a href="{{url_for('downloadFile')}}" class="downloadbtn">
+                <i class="fa fa-download" style="font-size: 45px;" ></i>
+            </a>
             <h2>{{ translation }} </h2>
-                <!-- <audio controls style="z-index: 100;">
-                   <source  src="{{url_for ('static',filename='media/t-rex-roar.mp3')}}" type="audio/mpeg">
-                        
-                </audio> -->
-            
-            </div>
         
+        </div>
 	<ul class="bg-bubbles">
         <li></li>
 		<li></li>
